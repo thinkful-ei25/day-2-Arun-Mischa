@@ -32,3 +32,18 @@ function max(numbers){
 let numbersArray = [2,3,4,5,6,7,8];
 console.log(max(numbersArray));
 console.log(min(numbersArray));
+
+function average(numbers) {
+  if (!numbers || (numbers.length === 0)) {
+    return null;
+  }
+
+  let sum = 0;
+  numbers.forEach((value) => {
+    sum += value;
+  });
+  
+  return sum / numbers.length;
+}
+
+console.log(average(numbersArray));
