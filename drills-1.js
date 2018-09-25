@@ -122,3 +122,17 @@ function turtleMovement(movementArray) {
 }
 
 turtleMovement([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+
+
+function decode(sentence){
+  return sentence
+    .split(' ')
+    .reduce(function(acc, word){
+      if(word.length === 3){
+        return acc + ' ';
+      }
+      return acc + word[word.length-1].toUpperCase();
+    },'');
+}
+
+console.log(decode('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
