@@ -115,20 +115,10 @@ debrisFallingWarning('main street');
 icyRoadsWarning('main street');
 
 function turtleMovement(movementArray) {
-  const forwardMoves = movementArray.filter((move) => {
-    if (move[0] < 0 || move[1] < 0) {
-      return false;
-    }
-    return true;
-  });
-
-  const stepsTaken = forwardMoves.map((move) => {
-    return move[0] + move[1];
-  });
-
-  stepsTaken.forEach((move) => {
-    console.log(`The turtle took ${move} steps`);
-  });
+  movementArray
+    .filter((move) => (move[0] >= 0 && move[1] >= 0))
+    .map((move) => move[0] + move[1])
+    .forEach((move) => console.log(`The turtle took ${move} steps`));
 }
 
 turtleMovement([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
